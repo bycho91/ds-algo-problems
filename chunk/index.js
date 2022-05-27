@@ -11,14 +11,15 @@ function chunk(array, size) {
 
   for (let i = 0; i < array.length; i++) {
     const item = array[i];
-    const lastSubArr = resultArr[resultArr.length - 1];
+    const latestSubArr = resultArr[resultArr.length - 1];
 
-    if (!lastSubArr || lastSubArr.length === size) {
+    if (!latestSubArr || latestSubArr.length === size) {
       resultArr.push([item]);
     } else {
-      lastSubArr.push(item);
+      latestSubArr.push(item);
     }
   }
+  console.log(resultArr);
 
   return resultArr;
 }
