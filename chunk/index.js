@@ -7,13 +7,20 @@
 // chunk([0, 1, 2, 3, 4, 5], 4) -->  [[0, 1, 2, 3], [4, 5]]
 
 function chunk(array, size) {
-  let result = [];
+  const resultArr = [];
 
-  for (let i = 0; i <= array.length - 1; i++) {
-    console.log(array[i]);
+  for (let i = 0; i < array.length; i++) {
+    const item = array[i];
+    const lastSubArr = resultArr[resultArr.length - 1];
+
+    if (!lastSubArr || lastSubArr.length === size) {
+      resultArr.push([item]);
+    } else {
+      lastSubArr.push(item);
+    }
   }
 
-  return result;
+  return resultArr;
 }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
