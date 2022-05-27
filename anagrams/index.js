@@ -8,7 +8,28 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  function sanitizeString(str) {
+    return str.replace(/[\W]/gi, "");
+  }
+
+  let strA = sanitizeString(stringA);
+  let strB = sanitizeString(stringB);
+
+  let charCount = {};
+
+  for (let i = 0; i < strA.length; i++) {
+    if (!charCount[strA[i]]) {
+      charCount[strA[i]] = 1;
+    } else {
+      charCount[strA[i]] += 1;
+    }
+  }
+
+  console.log(charCount);
+}
+
+console.log(anagrams("hello there @#$@#$", "helo"));
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
