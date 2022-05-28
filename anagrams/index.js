@@ -26,7 +26,15 @@ function anagrams(stringA, stringB) {
     }
   }
 
-  console.log(charCount);
+  for(let i = 0; i < strB.length; i++) {
+    if(charCount.hasOwnProperty(strB[i])) {
+      charCount[strB[i]] -= 1;
+    }else {
+      return false;
+    }
+  }
+
+  if Object
 }
 
 console.log(anagrams("hello there @#$@#$", "helo"));
