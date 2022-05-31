@@ -9,35 +9,44 @@
 //   anagrams('lol', 'lolc') --> False
 
 function anagrams(stringA, stringB) {
-  function sanitizeString(str) {
-    return str.replace(/[\W]/gi, "");
+  let charsObj = {};
+
+  stringA
+    .replace(/[\W]/gi, "")
+    .split("")
+    .forEach((char) => {
+      if (charsObj[char]) {
+        charsObj[char] = charsObj[char] + 1;
+      } else {
+        charsObj[char] = 1;
+      }
+    });
+
+  for (let c in charsObj) {
+    console.log(c);
   }
-
-  let strA = sanitizeString(stringA);
-  let strB = sanitizeString(stringB);
-
-  let charCount = {};
-
-  for (let i = 0; i < strA.length; i++) {
-    if (!charCount[strA[i]]) {
-      charCount[strA[i]] = 1;
-    } else {
-      charCount[strA[i]] += 1;
-    }
-  }
-
-  for(let i = 0; i < strB.length; i++) {
-    if(charCount.hasOwnProperty(strB[i])) {
-      charCount[strB[i]] -= 1;
-    }else {
-      return false;
-    }
-  }
-
-  if Object
 }
 
-console.log(anagrams("hello there @#$@#$", "helo"));
+// function anagrams(stringA, stringB) {
+//   let newStrA = stringA
+//     .replace(/[\W]/gi, "")
+//     .toLowerCase()
+//     .split("")
+//     .sort()
+//     .join("");
+//   let newStrB = stringB
+//     .replace(/[\W]/gi, "")
+//     .toLowerCase()
+//     .split("")
+//     .sort()
+//     .join("");
+
+//   if (newStrA === newStrB) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
