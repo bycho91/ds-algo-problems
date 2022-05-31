@@ -12,6 +12,7 @@ function anagrams(stringA, stringB) {
   stringA = stringA.replace(/[\W]/gi, "").toLowerCase();
   stringB = stringB.replace(/[\W]/gi, "").toLowerCase();
 
+  // short circut check to see if length of sanitized strings are equal
   if (stringA.length !== stringB.length) return false;
 
   let stringAChars = {};
