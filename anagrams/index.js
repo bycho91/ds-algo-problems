@@ -9,12 +9,14 @@
 //   anagrams('lol', 'lolc') --> False
 
 function anagrams(stringA, stringB) {
-  stringA = stringA.replace(/[\W]/gi, "").toLowerCase();
-  stringB = stringB.replace(/[\W]/gi, "").toLowerCase();
+  // sanitize the string inputs
+  stringA = stringA.replace(/[\W]/g, "").toLowerCase();
+  stringB = stringB.replace(/[\W]/g, "").toLowerCase();
 
-  // short circut check to see if length of sanitized strings are equal
+  // short circuit
   if (stringA.length !== stringB.length) return false;
 
+  // create char dictionary from String A
   let stringAChars = {};
 
   for (let i = 0; i < stringA.length; i++) {
@@ -23,6 +25,7 @@ function anagrams(stringA, stringB) {
     stringAChars[char] = stringAChars[char] + 1 || 1;
   }
 
+  // check string B against the string A Chars dictionary
   for (let i = 0; i < stringB.length; i++) {
     let char = stringB[i];
     if (!stringAChars[char]) {
@@ -34,6 +37,33 @@ function anagrams(stringA, stringB) {
 
   return true;
 }
+
+// function anagrams(stringA, stringB) {
+//   stringA = stringA.replace(/[\W]/gi, "").toLowerCase();
+//   stringB = stringB.replace(/[\W]/gi, "").toLowerCase();
+
+//   // short circut check to see if length of sanitized strings are equal
+//   if (stringA.length !== stringB.length) return false;
+
+//   let stringAChars = {};
+
+//   for (let i = 0; i < stringA.length; i++) {
+//     let char = stringA[i];
+
+//     stringAChars[char] = stringAChars[char] + 1 || 1;
+//   }
+
+//   for (let i = 0; i < stringB.length; i++) {
+//     let char = stringB[i];
+//     if (!stringAChars[char]) {
+//       return false;
+//     } else {
+//       stringAChars[char]--;
+//     }
+//   }
+
+//   return true;
+// }
 
 // function anagrams(stringA, stringB) {
 //   let newStrA = stringA
