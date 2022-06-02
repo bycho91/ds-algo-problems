@@ -8,20 +8,36 @@
 //   reverseInt(-100) === -1
 
 function reverseInt(n) {
-  let stringN = n.toString().split("");
-  let reversed = "";
+  let newN = n.toString().replace("-", "");
+  let rev = "";
 
-  for (let i = 0; i <= stringN.length - 1; i++) {
-    if (stringN[i] === "-") continue;
-
-    reversed = stringN[i] + reversed;
+  for (let i = newN.length - 1; i >= 0; i--) {
+    rev = rev + newN[i];
   }
 
   if (n < 0) {
-    return parseInt(reversed) * -1;
+    return parseInt(rev) * -1;
   }
-  return parseInt(reversed);
+  return parseInt(rev);
 }
+
+console.log(reverseInt(-30));
+
+// function reverseInt(n) {
+//   let stringN = n.toString().split("");
+//   let reversed = "";
+
+//   for (let i = 0; i <= stringN.length - 1; i++) {
+//     if (stringN[i] === "-") continue;
+
+//     reversed = stringN[i] + reversed;
+//   }
+
+//   if (n < 0) {
+//     return parseInt(reversed) * -1;
+//   }
+//   return parseInt(reversed);
+// }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
