@@ -39,33 +39,6 @@ function anagrams(stringA, stringB) {
 }
 
 // function anagrams(stringA, stringB) {
-//   stringA = stringA.replace(/[\W]/gi, "").toLowerCase();
-//   stringB = stringB.replace(/[\W]/gi, "").toLowerCase();
-
-//   // short circut check to see if length of sanitized strings are equal
-//   if (stringA.length !== stringB.length) return false;
-
-//   let stringAChars = {};
-
-//   for (let i = 0; i < stringA.length; i++) {
-//     let char = stringA[i];
-
-//     stringAChars[char] = stringAChars[char] + 1 || 1;
-//   }
-
-//   for (let i = 0; i < stringB.length; i++) {
-//     let char = stringB[i];
-//     if (!stringAChars[char]) {
-//       return false;
-//     } else {
-//       stringAChars[char]--;
-//     }
-//   }
-
-//   return true;
-// }
-
-// function anagrams(stringA, stringB) {
 //   let newStrA = stringA
 //     .replace(/[\W]/gi, "")
 //     .toLowerCase()
