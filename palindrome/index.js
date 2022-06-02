@@ -6,9 +6,25 @@
 //   palindrome("love") === false
 
 function palindrome(str) {
-  let reversed = str.toLowerCase().split("").reverse().join("");
-  return reversed === str.toLowerCase() ? true : false;
+  str = str.toLowerCase();
+
+  let reversedStr = "";
+  for (let i = 0; i < str.length; i++) {
+    reversedStr = str[i] + reversedStr;
+  }
+
+  if (reversedStr === str) {
+    return true;
+  }
+
+  return false;
 }
+
+palindrome("hello");
+// function palindrome(str) {
+//   let reversed = str.toLowerCase().split("").reverse().join("");
+//   return reversed === str.toLowerCase() ? true : false;
+// }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
