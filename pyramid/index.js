@@ -22,7 +22,18 @@ function pyramid(n) {
   }
 }
 
-pyramid(3);
+pyramid(10);
+
+// function pyramid(n) {
+//   for (let i = 1; i <= n; i++) {
+//     const padding = " ".repeat(n - i);
+//     const hashes = "#".repeat(i * 2 - 1);
+
+//     console.log(padding + hashes + padding);
+//   }
+// }
+
+// pyramid(3);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
